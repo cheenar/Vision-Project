@@ -1,0 +1,149 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Vision | Product
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet')
+    link(rel='stylesheet', href='stylesheets/normalize.css')
+    link(rel='stylesheet', href='stylesheets/main.css')
+    link(rel='stylesheet', type='text/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+  body#unlock
+    #toggled
+      a#close(href='javascript:void(0)')
+        i.ion-close
+      #menu-wrapper
+        h1 MENU
+        |  
+        a(href='/') HOME
+        |  
+        a(href='/login') CUSTOMER LOGIN
+        |  
+        a(href='/custom') CUSTOM CABINETS
+        |  
+        a(href='/base') BASE CABINETS
+        |  
+        a(href='/information') INFORMATION
+    header#unlock
+      nav
+        a(href='/')
+          img(src='images/logo.png')
+        a#menu(href='javascript:void(0)')
+          i.ion-navicon-round
+      #block
+        h1 SAMPLE PRODUCT
+        .cabinet
+          img(style='width: 100%; height: auto;', src='images/cabinet2.png')
+        .store
+          form(action='#0')
+            input#password(type='number', min='9', max='42', required='', placeholder='Width (9-42 inches)')
+            |  
+            input#password(type='number', min='18', max='68', required='', placeholder='Height (18-68 inches)')
+            |  
+            input#password(type='number', min='9', max='30', required='', placeholder='Length (9-30 inches)')
+            |  
+            input#password(type='number', min='0', max='3', required='', placeholder='Rollouts (0-3)')
+            |  
+            select(name='Hinge Sides', required='')
+              option(value='') Please select
+              option(value='L') Left Hinge
+              option(value='R') Right Hinge
+              option(value='B') Both Hinge
+            |  
+            select(name='Finish Sides', required='')
+              option(value='') Please select
+              option(value='L') Left Finish
+              option(value='R') Right Finish
+              option(value='B') Both Finish
+            |  
+            select(name='Drawer Style', required='')
+              option(value='') Please select
+              option(value='Z') Base
+              option(value='G') Base SC
+              option(value='V') Base DT
+            |  
+            select(name='Hinge Type', required='')
+              option(value='') Please select
+              option(value='Std') STD Hinge
+              option(value='StdSC') STD SC Hinge
+            |  
+            select(name='Glide Type', required='')
+              option(value='') Please select
+              option(value='SMStd') SMSTD Glide
+              option(value='SMSC') SMSC Glide
+              option(value='UMSC') UMSC Glide
+            |  
+            select(name='Drawer Box', required='')
+              option(value='') Please select
+              option(value='WMeID') WMeID Drawer Box
+              option(value='PWST') PWST Drawer Box
+              option(value='PWPS') PWPS Drawer Box
+              option(value='SWDT') SWDT Drawer Box
+            |  
+            select(name='Glaze', required='')
+              option(value='') Please select
+              option(value='Yes') Yes
+              option(value='No') No
+            |  
+            select(name='Interior Color', required='')
+              option(value='') Please select
+              option(value='W') Bone
+              option(value='S') Sunset
+            |  
+            select(name='Door Style', required='')
+              option(value='') Please select
+              option(value='801UPT') 801 UPT
+              option(value='802CRT') 802 CRT
+            |  
+            select(name='Glaze', required='')
+              option(value='') Please select
+              option(value='Yes') Yes
+              option(value='No') No
+            |  
+            select(name='Finish Material', required='')
+              option(value='') Please select
+              option(value='BE') Bone
+              option(value='CP') Champagne
+              option(value='ML') Moonlight
+              option(value='SE') Seaside
+              option(value='ST') Steel
+              option(value='SU') Sunset
+              option(value='EM') Ember
+              option(value='JV') Java
+              option(value='BR') Brownstone
+              option(value='WB') Winter Bark
+              option(value='ES') Espresso
+              option(value='LU') Luster
+              option(value='BI') Bistro
+            |  
+            select(name='Finish Material', required='')
+              option(value='') Please select
+              option(value='BEW') White PB
+              option(value='CPW') Champagne
+              option(value='MLW') Moonlight
+              option(value='SEW') Seaside
+              option(value='STW') Steel
+              option(value='SUW') Sunset
+              option(value='EMW') Ember
+              option(value='JVW') Java
+              option(value='BRW') Brownstone
+              option(value='WBW') Winter Bark
+              option(value='ESW') Espresso
+              option(value='BES') Bone 2
+              option(value='CPS') Champagne 2
+              option(value='MLS') Moonlight 2
+              option(value='SES') Seaside 2
+              option(value='STS') Steel 2
+              option(value='SUS') Sunset 2
+              option(value='EMS') Ember 2
+              option(value='JVS') Java 2
+              option(value='BRS') Brownstone 2
+              option(value='WBS') Winter Bark 2
+              option(value='ESS') Espresso 2
+            |  
+            input.button(type='submit', value='ADD TO CART')
+    script(src='javascripts/main.js', type='text/javascript')
+
