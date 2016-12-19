@@ -21,7 +21,7 @@ router.post("/", function(req, res) {
       } else {
         res.cookie('uid', rows[0].UID);
         res.cookie('name', rows[0].Name);
-        res.redirect("/login");
+        res.redirect("/");
       }
     }
     if(failed) {
