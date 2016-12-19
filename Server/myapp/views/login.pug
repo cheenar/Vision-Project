@@ -17,15 +17,15 @@ html(lang='en')
         i.ion-close
       #menu-wrapper
         h1 MENU
-        |  
+        |
         a(href='/') HOME
-        |  
+        |
         a(href='/login') CUSTOMER LOGIN
-        |  
+        |
         a(href='/custom') CUSTOM CABINETS
-        |  
+        |
         a(href='/base') BASE CABINETS
-        |  
+        |
         a(href='/information') INFORMATION
     header
       nav
@@ -37,15 +37,15 @@ html(lang='en')
         h1 CUSTOMER ACCOUNT
         form(action='/login', method='POST')
           input#username(type='email', name="email", required='', placeholder='Email Address')
-          |  
+          |
           input#password(type='password', name="password", required='', placeholder='Password')
-          |  
+          p(style='color:red') Incorrect Email Address or Password
+          |
           a(style='text-decoration: none;', href='/register') Register
-          |  | 
+          |  |
           a(style='text-decoration: none;', href='/password') Forgot Password
           br
           br
-          |  
+          |
           input.button(type='submit', value='LOGIN')
     script(src='javascripts/main.js', type='text/javascript')
-

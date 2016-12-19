@@ -66,6 +66,26 @@ nav a:first-child img {
   vertical-align: center;
 }
 
+nav p {
+  float: right;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 60px;
+  margin-right: 30px;
+}
+
+.custom-dropdown {
+  webkit-appearance: none;
+ -moz-appearance: none;
+ border: 0;
+ cursor: pointer;
+ -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+ font-family: 'Raleway', sans-serif;
+ width: 45%;
+ margin: 5px;
+ float: left;
+}
+
 form input{
   font-family: 'Raleway', sans-serif;
   position: relative;
@@ -226,11 +246,9 @@ outline:none;
   font-family: 'Raleway', sans-serif;
 }
 
-@media (max-width: 600px) {
-  .cabinet, .store {
-    float: center;
-    margin: auto;
-    width: 80%;
+@media (min-width: 600px) {
+  .store, .cabinet {
+    width: 40%;
   }
 }
 
@@ -244,7 +262,6 @@ outline:none;
 }
 
 .store {
-  width: 40%;
   height: auto;
   padding: 20px;
   margin-bottom: 150px;
