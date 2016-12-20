@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Vision | Product
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet')
+    link(rel='stylesheet', href='stylesheets/normalize.css')
+    link(rel='stylesheet', href='stylesheets/main.css')
+    link(rel='stylesheet', type='text/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    body#unlock
+    #toggled
+      a#close(href='javascript:void(0)')
+        i.ion-close
+      #menu-wrapper
+        h1 MENU
+        |
+        a(href='index.html') HOME
+        |
+        a(href='login.html') CUSTOMER LOGIN
+        |
+        a(href='custom.html') CUSTOM CABINETS
+        |
+        a(href='base.html') BASE CABINETS
+        |
+        a(href='information.html') INFORMATION
+    header#unlock
+      nav
+        a(href='index.html')
+          img(src='images/logo.png')
+        a#menu(href='javascript:void(0)')
+          i.ion-navicon-round
+        a#cart(href='cart.html')
+          i.ion-android-cart
+      #block
+        h1 CART
+        p Your cart is empty
+        form(action='#0')
+          .duplicate
+            .cabinet
+              img(style='width: 50%; height: auto;', src='')
+            .store
+              ul(style='float: left;')
+              |
+              input#password(type='number', name='quantity', min='1', max='999', required='', placeholder='Quantity')
+          |
+          /*input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')*/
+
+script(src='javascripts/main.js', type='text/javascript')
