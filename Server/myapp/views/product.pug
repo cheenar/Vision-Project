@@ -41,9 +41,9 @@ html(lang='en')
         form(action='#0')
         input#password(type='number', name='width', min='9', max='42', required='', placeholder='Width (9-42 inches)')
         |
-        input#password(type='number', name='height', min='18', max='68', required='', placeholder='Height (18-68 inches)')
+        input#password(type='number', name='height', min='18', max='60', required='', placeholder='Height (18-68 inches)')
         |
-        input#password(type='number', name='length', min='9', max='30', required='', placeholder='Length (9-30 inches)')
+        input#password(type='number', name='depth', min='9', max='30', required='', placeholder='Depth (9-30 inches)')
         |
         input#password(type='number', name='rollouts', min='0', max='3', required='', placeholder='Rollouts (0-3)')
         |
@@ -59,16 +59,10 @@ html(lang='en')
           option(value='R') Right Finish
           option(value='B') Both Finish
         |
-        select.custom-dropdown(name='Drawer Style', required='')
-          option(value='') Select Drawer Style
-          option(value='Z') Base
-          option(value='G') Base SC
-          option(value='V') Base DT
-        |
         select.custom-dropdown(name='Hinge Type', required='')
           option(value='') Select Hinge Type
           option(value='Std') STD Hinge
-          option(value='StdSC') STD SC Hinge
+          option(value='SC') STD SC Hinge
         |
         select.custom-dropdown(name='Glide Type', required='')
           option(value='') Select Glide Type
@@ -114,7 +108,7 @@ html(lang='en')
           option(value='LU') Luster
           option(value='BI') Bistro
         |
-        select.custom-dropdown(name='Finish Material', required='')
+        select.custom-dropdown(name='Material', required='')
           option(value='') Select Material
           option(value='BEW') White PB
           option(value='CPW') Champagne
