@@ -118,6 +118,20 @@ outline:none;
   text-decoration: none;
 }
 
+#cart:link {
+  position: absolute;
+  font-size: 38px;
+  color: #fff;
+  text-decoration: none;
+  right: 30px;
+  top: 50px;
+}
+
+#cart:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
 #menu:link {
   position: absolute;
   font-size: 38px;
@@ -125,7 +139,6 @@ outline:none;
   text-decoration: none;
   left: 30px;
   top: 50px;
-
 }
 
 #menu:visited {
@@ -244,6 +257,8 @@ outline:none;
   margin: 0 auto;
   margin-bottom: 150px;
   font-family: 'Raleway', sans-serif;
+  overflow:auto;
+  clear:both;
 }
 
 @media (min-width: 600px) {

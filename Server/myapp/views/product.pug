@@ -27,119 +27,118 @@ html(lang='en')
         a(href='/base') BASE CABINETS
         |
         a(href='/information') INFORMATION
-    header#unlock
-      nav
-        a(href='/')
-          img(src='images/logo.png')
-        a#menu(href='javascript:void(0)')
-          i.ion-navicon-round
-      #block
-        h1 SAMPLE PRODUCT
-        .cabinet
-          img(style='width: 100%; height: auto;', src='images/cabinet2.png')
-        .store
-        form(action='#0')
-        input#password(type='number', name='width', min='9', max='42', required='', placeholder='Width (9-42 inches)')
         |
-        input#password(type='number', name='height', min='18', max='68', required='', placeholder='Height (18-68 inches)')
-        |
-        input#password(type='number', name='length', min='9', max='30', required='', placeholder='Length (9-30 inches)')
-        |
-        input#password(type='number', name='rollouts', min='0', max='3', required='', placeholder='Rollouts (0-3)')
-        |
-        select.custom-dropdown(name='Hinge Sides', required='')
-          option(value='') Select Hinge Side
-          option(value='L') Left Hinge
-          option(value='R') Right Hinge
-          option(value='B') Both Hinge
-        |
-        select.custom-dropdown(name='Finish Sides', required='')
-          option(value='') Select Finish Side
-          option(value='L') Left Finish
-          option(value='R') Right Finish
-          option(value='B') Both Finish
-        |
-        select.custom-dropdown(name='Drawer Style', required='')
-          option(value='') Select Drawer Style
-          option(value='Z') Base
-          option(value='G') Base SC
-          option(value='V') Base DT
-        |
-        select.custom-dropdown(name='Hinge Type', required='')
-          option(value='') Select Hinge Type
-          option(value='Std') STD Hinge
-          option(value='StdSC') STD SC Hinge
-        |
-        select.custom-dropdown(name='Glide Type', required='')
-          option(value='') Select Glide Type
-          option(value='SMStd') SMSTD Glide
-          option(value='SMSC') SMSC Glide
-          option(value='UMSC') UMSC Glide
-        |
-        select.custom-dropdown(name='Drawer Box', required='')
-          option(value='') Select Drawer Box
-          option(value='WMeID') WMeID Drawer Box
-          option(value='PWST') PWST Drawer Box
-          option(value='PWPS') PWPS Drawer Box
-          option(value='SWDT') SWDT Drawer Box
-        |
-        select.custom-dropdown(name='Glaze', required='')
-          option(value='') Select Glaze
-          option(value='Yes') Yes
-          option(value='No') No
-        |
-        select.custom-dropdown(name='Interior Color', required='')
-          option(value='') Select Interior Color
-          option(value='W') Bone
-          option(value='S') Sunset
-        |
-        select.custom-dropdown(name='Door Style', required='')
-          option(value='') Select Door Style
-          option(value='801UPT') 801 UPT
-          option(value='802CRT') 802 CRT
-        |
-        select.custom-dropdown(name='Finish Material', required='')
-          option(value='') Select Finish Material
-          option(value='BE') Bone
-          option(value='CP') Champagne
-          option(value='ML') Moonlight
-          option(value='SE') Seaside
-          option(value='ST') Steel
-          option(value='SU') Sunset
-          option(value='EM') Ember
-          option(value='JV') Java
-          option(value='BR') Brownstone
-          option(value='WB') Winter Bark
-          option(value='ES') Espresso
-          option(value='LU') Luster
-          option(value='BI') Bistro
-        |
-        select.custom-dropdown(name='Finish Material', required='')
-          option(value='') Select Material
-          option(value='BEW') White PB
-          option(value='CPW') Champagne
-          option(value='MLW') Moonlight
-          option(value='SEW') Seaside
-          option(value='STW') Steel
-          option(value='SUW') Sunset
-          option(value='EMW') Ember
-          option(value='JVW') Java
-          option(value='BRW') Brownstone
-          option(value='WBW') Winter Bark
-          option(value='ESW') Espresso
-          option(value='BES') Bone 2
-          option(value='CPS') Champagne 2
-          option(value='MLS') Moonlight 2
-          option(value='SES') Seaside 2
-          option(value='STS') Steel 2
-          option(value='SUS') Sunset 2
-          option(value='EMS') Ember 2
-          option(value='JVS') Java 2
-          option(value='BRS') Brownstone 2
-          option(value='WBS') Winter Bark 2
-          option(value='ESS') Espresso 2
-        p YOUR PRICE:
-        |
-        input.button(type='submit', value='ADD TO CART')
+        a(href='/account') ACCOUNT OVERVIEW
+        header#unlock
+          nav
+            a(href='/')
+              img(src='images/logo.png')
+            a#menu(href='javascript:void(0)')
+              i.ion-navicon-round
+            a#cart(href='/cart')
+              i.ion-android-cart
+          #block
+            h1 SAMPLE PRODUCT
+            .cabinet
+              img(style='width: 100%; height: auto;', src='images/cabinet2.png')
+            .store
+              form(action='#0')
+                input#password(type='number', name='width', min='9', max='42', required='', placeholder='Width (9-42 inches)')
+                |
+                input#password(type='number', name='height', min='18', max='60', required='', placeholder='Height (18-68 inches)')
+                |
+                input#password(type='number', name='depth', min='9', max='30', required='', placeholder='Depth (9-30 inches)')
+                |
+                input#password(type='number', name='rollouts', min='0', max='3', required='', placeholder='Rollouts (0-3)')
+                |
+                select.custom-dropdown(name='Hinge Sides', required='')
+                  option(value='') Select Hinge Side
+                  option(value='L') Left Hinge
+                  option(value='R') Right Hinge
+                  option(value='B') Both Hinge
+                |
+                select.custom-dropdown(name='Finish Sides', required='')
+                  option(value='') Select Finish Side
+                  option(value='L') Left Finish
+                  option(value='R') Right Finish
+                  option(value='B') Both Finish
+                |
+                select.custom-dropdown(name='Hinge Type', required='')
+                  option(value='') Select Hinge Type
+                  option(value='Std') STD Hinge
+                  option(value='SC') STD SC Hinge
+                |
+                select.custom-dropdown(name='Glide Type', required='')
+                  option(value='') Select Glide Type
+                  option(value='SMStd') SMSTD Glide
+                  option(value='SMSC') SMSC Glide
+                  option(value='UMSC') UMSC Glide
+                |
+                select.custom-dropdown(name='Drawer Box', required='')
+                  option(value='') Select Drawer Box
+                  option(value='WMeID') WMeID Drawer Box
+                  option(value='PWST') PWST Drawer Box
+                  option(value='PWPS') PWPS Drawer Box
+                  option(value='SWDT') SWDT Drawer Box
+                |
+                select.custom-dropdown(name='Glaze', required='')
+                  option(value='') Select Glaze
+                  option(value='Yes') Yes
+                  option(value='No') No
+                |
+                select.custom-dropdown(name='Interior Color', required='')
+                  option(value='') Select Interior Color
+                  option(value='W') Bone
+                  option(value='S') Sunset
+                |
+                select.custom-dropdown(name='Door Style', required='')
+                  option(value='') Select Door Style
+                  option(value='801UPT') 801 UPT
+                  option(value='802CRT') 802 CRT
+                |
+                select.custom-dropdown(name='Finish Material', required='')
+                  option(value='') Select Finish Material
+                  option(value='BE') Bone
+                  option(value='CP') Champagne
+                  option(value='ML') Moonlight
+                  option(value='SE') Seaside
+                  option(value='ST') Steel
+                  option(value='SU') Sunset
+                  option(value='EM') Ember
+                  option(value='JV') Java
+                  option(value='BR') Brownstone
+                  option(value='WB') Winter Bark
+                  option(value='ES') Espresso
+                  option(value='LU') Luster
+                  option(value='BI') Bistro
+                |
+                select.custom-dropdown(name='Material', required='')
+                  option(value='') Select Material
+                  option(value='BEW') White PB
+                  option(value='CPW') Champagne
+                  option(value='MLW') Moonlight
+                  option(value='SEW') Seaside
+                  option(value='STW') Steel
+                  option(value='SUW') Sunset
+                  option(value='EMW') Ember
+                  option(value='JVW') Java
+                  option(value='BRW') Brownstone
+                  option(value='WBW') Winter Bark
+                  option(value='ESW') Espresso
+                  option(value='BES') Bone 2
+                  option(value='CPS') Champagne 2
+                  option(value='MLS') Moonlight 2
+                  option(value='SES') Seaside 2
+                  option(value='STS') Steel 2
+                  option(value='SUS') Sunset 2
+                  option(value='EMS') Ember 2
+                  option(value='JVS') Java 2
+                  option(value='BRS') Brownstone 2
+                  option(value='WBS') Winter Bark 2
+                  option(value='ESS') Espresso 2
+                p YOUR PRICE:
+                |
+                input.button(type='submit', value='ADD TO CART')
+              p You&apos;ve succesfully added this product to your cart
 
     script(src='javascripts/main.js', type='text/javascript')

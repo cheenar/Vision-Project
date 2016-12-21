@@ -47,6 +47,9 @@
             <a href="information.html">
         INFORMATION
       </a>
+      <a href="account.html">
+        ACCOUNT OVERVIEW
+      </a>
         </div>
     </div>
     <header id="unlock">
@@ -58,6 +61,9 @@
             <a href="javascript:void(0)" id="menu">
                 <i class="ion-navicon-round"></i>
             </a>
+            <a href="cart.html" id="cart">
+                <i class="ion-android-cart"></i>
+            </a>
         </nav>
         <div id="block">
             <h1>SAMPLE PRODUCT</h1>
@@ -67,8 +73,8 @@
                 <div class="store">
                     <form action="#0">
                       <input type="number" name="width" min="9" max="42" id="password" required placeholder="Width (9-42 inches)" />
-                      <input type="number" name="height" min="18" max="68" id="password" required placeholder="Height (18-68 inches)" />
-                      <input type="number" name="length" min="9" max="30" id="password" required placeholder="Length (9-30 inches)" />
+                      <input type="number" name="height" min="18" max="60" id="password" required placeholder="Height (18-68 inches)" />
+                      <input type="number" name="depth" min="9" max="30" id="password" required placeholder="Depth (9-30 inches)" />
                       <input type="number" name="rollouts" min="0" max="3" id="password" required placeholder="Rollouts (0-3)" />
                         <select class="custom-dropdown" name="Hinge Sides" required>
                             <option value="">Select Hinge Side</option>
@@ -82,16 +88,10 @@
                             <option value="R">Right Finish</option>
                             <option value="B">Both Finish</option>
                         </select>
-                        <select class="custom-dropdown" name="Drawer Style" required>
-                            <option value="">Select Drawer Style</option>
-                            <option value="Z">Base</option>
-                            <option value="G">Base SC</option>
-                            <option value="V">Base DT</option>
-                        </select>
                         <select class="custom-dropdown" name="Hinge Type" required>
                             <option value="">Select Hinge Type</option>
                             <option value="Std">STD Hinge</option>
-                            <option value="StdSC">STD SC Hinge</option>
+                            <option value="SC">STD SC Hinge</option>
                         </select>
                         <select class="custom-dropdown" name="Glide Type" required>
                             <option value="">Select Glide Type</option>
@@ -137,7 +137,7 @@
                             <option value="LU">Luster</option>
                             <option value="BI">Bistro</option>
                         </select>
-                        <select class="custom-dropdown" name="Finish Material" required>
+                        <select class="custom-dropdown" name="Material" required>
                             <option value="">Select Material</option>
                             <option value="BEW">White PB</option>
                             <option value="CPW">Champagne</option>
@@ -165,6 +165,7 @@
                         <p>YOUR PRICE:</p>
                         <input class="button" type="submit" value="ADD TO CART" />
                     </form>
+                    <p>You've succesfully added this product to your cart</p>
                 </div>
         </div>
 
