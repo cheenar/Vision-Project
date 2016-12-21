@@ -15,6 +15,7 @@ var base = require("./routes/base");
 var password = require("./routes/password");
 var product = require("./routes/product");
 var information = require("./routes/information");
+var cart = require("./routes/cart");
 
 var app = express();
 
@@ -29,6 +30,14 @@ global.connection = mysql.createConnection({
 	database: "Vision"
 });
 
+global.lengthOfJson = function lengthOfJson(input) {
+  var count = 0;
+  for (var key in input) {
+    count++;
+  }
+  return count;
+};
+
 global.makeID = function makeid(length)
 {
     var text = "";
@@ -38,7 +47,7 @@ global.makeID = function makeid(length)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
-}
+};
 
 global.connection.connect();
 //End Globals
@@ -65,6 +74,7 @@ app.use("/base", base);
 app.use('/password', password);
 app.use('/product', product);
 app.use("/information", information);
+app.use("/cart", cart);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
