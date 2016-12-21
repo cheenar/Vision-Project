@@ -2,7 +2,7 @@
 <html lang="en"> <!--Language-->
 <head>
     <meta charset="utf-8"> <!--Encoding-->
-    <title>Vision | Cart</title> <!--Title-->
+    <title>Vision | Account</title> <!--Title-->
     <meta name="description" content=""> <!--Description-->
     <meta name="author" content=""> <!--Author Name-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Rendering-->
@@ -48,28 +48,29 @@
         <a href="javascript:void(0)" id="menu">
           <i class="ion-navicon-round"></i>
         </a>
-        <a href="cart.html" id="cart">
-            <i class="ion-android-cart"></i>
-        </a>
     </nav>
     <div id="block">
-      <h1>CART</h1>
-      <p>Your cart is empty</p>
-      <form action="#0">
-        <div class="duplicate">
-        <div class="cabinet">
-          <img style="width: 50%; height: auto;" src="" />
+      <h1>ACCOUNT OVERVIEW</h1>
+      <p>You appear to not be logged in. Please login <a style="text-decoraton: none; color: black;" href="login.html">here</a></p>
+      <div class="login-block">
+        <form action=#0>
+        <input type="text" id="username" required placeholder="Full Name" />
+        <input type="tel" id="username" required placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}"/>
+        <input type="text" id="username" required placeholder="Shipping Address" />
+        <input type="text" id="username" required placeholder="Billing Address" />
+        <input type="email" id="username" required placeholder="Email Address" />
+        <input class="button" type="submit" value="SUBMIT CHANGES"/>
+        </form>
+          </div>
+          <h1>ORDER HISTORY</h1>
+          <div class="cabinet">
+            <img style="width: 50%; height: auto;" src="" />
+          </div>
+          <div class="store">
+          <ul style="float: left;">
+          </ul>
+          </div>
         </div>
-        <div class="store">
-        <ul style="float: left;">
-        </ul>
-        <!--<input type="number" name="quantity" min="1" max="999" id="password" required placeholder="Quantity" />-->
-        </div>
-      </div>
-        <input style="width: 40%; margin-bottom: 50px; margin-top: 30vh;" class="button" type="submit" value="SUBMIT ORDER" />
-    </form>
-
-  </div>
 </header>
 <script src="js/main.js" type="text/javascript"></script>
 </body>

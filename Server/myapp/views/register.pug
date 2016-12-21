@@ -17,16 +17,18 @@ html(lang='en')
         i.ion-close
       #menu-wrapper
         h1 MENU
-        |  
+        |
         a(href='/') HOME
-        |  
+        |
         a(href='/login') CUSTOMER LOGIN
-        |  
+        |
         a(href='/custom') CUSTOM CABINETS
-        |  
+        |
         a(href='/base') BASE CABINETS
-        |  
+        |
         a(href='/information') INFORMATION
+        |
+        a(href='/account') ACCOUNT OVERVIEW
     header
       nav
         a(href='/')
@@ -36,17 +38,16 @@ html(lang='en')
       .login-block
         form(action='#', method='POST')
           h1 REGISTER
-          |  
+          |
           input#username(type='text', required='', name='name', placeholder='Full Name')
-          |  
+          |
           input#username(type='tel', required='', name='phone_number', placeholder='123-456-7890', pattern='\d{3}[\-]\d{3}[\-]\d{4}')
-          |  
+          |
           input#username(type='text', required='', name='shipping_address', placeholder='Shipping Address')
-          |  
+          |
           input#username(type='text', required='', name='billing_address', placeholder='Billing Address')
-          |  
+          |
           input#username(type='email', required='', name='email_address', placeholder='Email Address')
-          |  
+          |
           input.button(type='submit', value='SUBMIT')
     script(src='javascripts/main.js', type='text/javascript')
-

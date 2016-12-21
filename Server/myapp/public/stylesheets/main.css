@@ -257,6 +257,8 @@ outline:none;
   margin: 0 auto;
   margin-bottom: 150px;
   font-family: 'Raleway', sans-serif;
+  overflow:auto;
+  clear:both;
 }
 
 @media (min-width: 600px) {
