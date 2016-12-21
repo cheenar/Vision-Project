@@ -3,20 +3,20 @@ var router = express.Router();
 
 /* GET home page. */
 
-router.get('/', function(req, res, next) {
-  res.render('login', { });
+router.get('/', function (req, res, next) {
+  res.render('login', {});
 });
 
-router.post("/", function(req, res) {
+router.post("/", function (req, res) {
   let username = req.body.email;
   let password = req.body.password;
 
-  global.connection.query(loginAttempt(username, password), function(err, rows, fields) {
+  global.connection.query(loginAttempt(username, password), function (err, rows, fields) {
     var failed = false;
-    if(err) {
+    if (err) {
       failed = true;
     } else {
-      if(rows.length == 0) {
+      if (rows.length == 0) {
         failed = true;
       } else {
         res.cookie('uid', rows[0].UID);
@@ -24,13 +24,13 @@ router.post("/", function(req, res) {
         res.redirect("/");
       }
     }
-    if(failed) {
+    if (failed) {
       res.send("Username or Password Incorrect"); //#TODO - ADD A FAILED USER PAGE
     }
   });
 });
 
-let loginAttempt = function(email, password) {
+let loginAttempt = function (email, password) {
   return "SELECT * FROM `Users` WHERE `Email` = '" + email + "' AND `Password` = '" + password + "'";
 };
 

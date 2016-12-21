@@ -14,6 +14,7 @@ var custom = require("./routes/custom");
 var base = require("./routes/base");
 var password = require("./routes/password");
 var product = require("./routes/product");
+var information = require("./routes/information");
 
 var app = express();
 
@@ -63,6 +64,7 @@ app.use("/custom", custom);
 app.use("/base", base);
 app.use('/password', password);
 app.use('/product', product);
+app.use("/information", information);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
