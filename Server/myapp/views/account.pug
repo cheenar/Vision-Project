@@ -1,4 +1,5 @@
 doctype html
+
 html(lang='en')
   head
     meta(charset='utf-8')
@@ -43,16 +44,16 @@ html(lang='en')
         else
           | You're Not Logged In
         .login-block
-          form(action='#0')
-            input#username(type='text', required='', placeholder='Full Name')
+          form(action='/account/modify', method="POST")
+            input#username(type='text', required='', placeholder= '', value= fullName, name="fullName")
             |  
-            input#username(type='tel', required='', placeholder='123-456-7890', pattern='\d{3}[\-]\d{3}[\-]\d{4}')
+            input#username(type='tel', required='', value= phoneNumber, name="phoneNumber")
             |  
-            input#username(type='text', required='', placeholder='Shipping Address')
+            input#username(type='text', required='', value= shippingAddress, , name="shippingAddress")
             |  
-            input#username(type='text', required='', placeholder='Billing Address')
+            input#username(type='text', required='', value= billingAddress, name="billingAddress")
             |  
-            input#username(type='email', required='', placeholder='Email Address')
+            input#username(type='email', required='', value= emailAddress, name="emailAddress")
             |  
             input.button(type='submit', value='SUBMIT CHANGES')
         h1 ORDER HISTORY

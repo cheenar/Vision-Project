@@ -16,8 +16,44 @@ var password = require("./routes/password");
 var product = require("./routes/product");
 var information = require("./routes/information");
 var cart = require("./routes/cart");
+var account = require("./routes/account");
+
+console.log(account);
 
 var app = express();
+
+/* 
+  Testing
+ */
+
+global.orderDatabase = require("./orders.js");
+global.orderDatabase.initializeDatabase();
+
+global.orderDatabase.initializeUser("9HhnfNuQ9uSLPxuX");
+
+var collection = global.orderDatabase.db.getCollection("9HhnfNuQ9uSLPxuX");
+var currentData = collection.get(1).orders;
+currentData.push({"name":"penis", "uoid":13292 });
+currentData.push({"name":"bailey", "uoid":56463 });
+console.log(collection.get(1).orders);
+
+var id = 0;
+
+for(var key in currentData) {
+  if(currentData[key].uoid == "56463") {
+    break;
+  }
+  id++;
+}
+
+currentData.splice(id, 1);
+
+console.log(collection.get(1).orders);
+
+
+
+//End Testing
+
 
 //Start Globals
 global.mysql_util = require('./utils/mysql_util');
@@ -75,6 +111,7 @@ app.use('/password', password);
 app.use('/product', product);
 app.use("/information", information);
 app.use("/cart", cart);
+app.use("/account", account);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

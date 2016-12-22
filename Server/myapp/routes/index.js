@@ -11,13 +11,9 @@ router.get('/', function (req, res, next) {
   }
 });
 
-router.get("/account", function(req, res, next) {
-  if(req.cookies.name != null) {
-    res.render("account", { 'accountLoggedIn':"true", 'name':req.cookies.name });
-  }
-  else {
-    res.render("account", { 'accountLoggedIn':"false" } );
-  }
-})
+router.get('/save_database', function(req, res) {
+  global.orderDatabase.db.save();
+  res.redirect("/");
+});
 
 module.exports = router;
