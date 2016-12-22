@@ -31,7 +31,7 @@ global.orderDatabase.initializeDatabase();
 
 global.orderDatabase.initializeUser("9HhnfNuQ9uSLPxuX");
 
-var collection = global.orderDatabase.db.getCollection("9HhnfNuQ9uSLPxuX");
+/*var collection = global.orderDatabase.db.getCollection("9HhnfNuQ9uSLPxuX");
 var currentData = collection.get(1).orders;
 currentData.push({"name":"penis", "uoid":13292 });
 currentData.push({"name":"bailey", "uoid":56463 });
@@ -48,7 +48,7 @@ for(var key in currentData) {
 
 currentData.splice(id, 1);
 
-console.log(collection.get(1).orders);
+console.log(collection.get(1).orders);*/
 
 
 

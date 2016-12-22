@@ -6,14 +6,22 @@ var db = null;
 function initializeDatabase() {
     var db = new loki("orders.json");
     this.db = db;
+    db.loadDatabase({}, function(err, data) {
+        if(err == null) {
+            console.log(data);
+        }
+    });;
 }
 
 function initializeUser(collectionName) {
     if (this.db.getCollection(collectionName) != null) {
-        console.log("Warning, database already exists!");
+        console.log("Warning, collection already exists!");
     } else {
         this.db.addCollection(collectionName);
-        this.db.getCollection(collectionName).insert({ "orders": [] });
+        this.db.getCollection(collectionName).insert({
+            "cart": [],
+            "orders": [] 
+        });
     }
 }
 

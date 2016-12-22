@@ -24,13 +24,16 @@ router.get("/", function (req, res, next) {
 
 router.post("/modify", function(req, res) {
   let query = modifyAccount(req.cookies.uid, req.body.fullName, req.body.phoneNumber, req.body.shippingAddress, req.body.billingAddress, req.body.emailAddress);
+  
   console.log(query);
   global.connection.query(query, function(err, rows, fields) {
     if(err) {
       console.log("Err:\n" + err);
+    } else {
+      res.cookie("name", req.body.fullName);
+      res.redirect("/account"); 
     }
   });
-  res.redirect("/account");
 })
 
 function modifyAccount(uid, name, number, addressS, addressB, email) {
