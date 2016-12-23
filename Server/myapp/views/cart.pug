@@ -41,8 +41,9 @@ html(lang='en')
           i.ion-android-cart
       #block
         h1 CART
-        if orders.length == 0
-          p Your cart is empty
+        if orders != null
+          if orders.length == 0
+            p Your cart is empty
         form(action='/cart/submit_order', method="POST")
           .duplicate
             if orders != null
