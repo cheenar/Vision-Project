@@ -33,6 +33,7 @@ router.post("/", function (req, res) {
             //currentData.push();
             
             req.body.uoid = global.makeID(16);
+            req.body.quantity = 1;
             
             currentData.push(req.body);
 

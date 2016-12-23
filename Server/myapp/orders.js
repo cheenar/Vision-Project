@@ -6,6 +6,7 @@ var db = null;
 function initializeDatabase() {
     var db = new loki("orders.json");
     this.db = db;
+    db.autosaveEnable();
     db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
