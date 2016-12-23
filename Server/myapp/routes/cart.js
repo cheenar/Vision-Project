@@ -5,12 +5,19 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport('smtps://beta.vision.dev%40gmail.com:poopPee123@smtp.gmail.com');
 
 router.get("/", function (req, res) {
-    var collection = global.orderDatabase.db.getCollection("9HhnfNuQ9uSLPxuX");
-    var currentData = collection.get(1).cart;
+    var collection = global.orderDatabase.db.getCollection(req.cookies.uid);
+    if (collection != null) {
+        var currentData = collection.get(1).cart;
 
-    console.log(currentData);
-
-    res.render("cart", { orders: currentData });
+        if (currentData != null) {
+            console.log(currentData);
+            res.render("cart", { orders: currentData });
+        } else {
+            res.render("cart", {});
+        }
+    } else {
+        res.render("cart", {});
+    }
 });
 
 router.get("/remove", function (req, res) {

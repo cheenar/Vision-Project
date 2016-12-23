@@ -9,7 +9,7 @@ function initializeDatabase() {
         autosaveInterval: 60 * 1000,
     });
     this.db = db;
-    db.autosaveEnable();
+    //db.autosaveEnable();
     db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);

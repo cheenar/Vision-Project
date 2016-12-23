@@ -42,20 +42,21 @@ html(lang='en')
         p Your cart is empty
         form(action='/cart/submit_order', method="POST")
           .duplicate
-            for order in orders 
-              .cabinet
-                img(style='width: 80%; height: auto;', src='images/cabinet2.png')
-                br
-                a(style='text-decoration: none; color: black;', href='/cart/remove?uoid=' + order.uoid, method="GET") REMOVE
-              .store
-                ul(style='float: left;text-align:left;')
-                  each value, key in order
-                    - var h = key
-                    - var p = value
-                    if h != "uoid" && h != "quantity"
-                      li #{h}: #{p}
-                |  
-                input#password(type='number', name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
+            if orders != null
+              for order in orders 
+                .cabinet
+                  img(style='width: 80%; height: auto;', src='images/cabinet2.png')
+                  br
+                  a(style='text-decoration: none; color: black;', href='/cart/remove?uoid=' + order.uoid, method="GET") REMOVE
+                .store
+                  ul(style='float: left;text-align:left;')
+                    each value, key in order
+                      - var h = key
+                      - var p = value
+                      if h != "uoid" && h != "quantity"
+                        li #{h}: #{p}
+                  |  
+                  input#password(type='number', name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
                 
           |  
           input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')
