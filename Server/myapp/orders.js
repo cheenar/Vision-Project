@@ -10,6 +10,9 @@ function initializeDatabase() {
     
     db.autosaveInterval = 5000;
     db.autosaveEnable();
+    db.autosaveHandle = function() {
+        console.log("Autosave Completed");
+    }
     
     db.loadDatabase({}, function(err, data) {
         if(err == null) {
