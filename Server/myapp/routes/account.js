@@ -45,6 +45,8 @@ router.get("/", function (req, res, next) {
         }
       }
     });
+  } else {
+    res.render("account", { 'accountLoggedIn': false});
   }
 });
 
