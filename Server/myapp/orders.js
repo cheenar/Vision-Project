@@ -8,10 +8,11 @@ var db = null;
 function initializeDatabase() {
     var db = new loki("orders.json", {});
 
+    this.db = db;
+
     db.loadDatabase({}, function(err, data) {
         if(err == null) {
             Repeat(db.saveDatabase).every(5000, 'ms').start.in('15', 'sec');
-            this.db = db;
         }
     });;
 }
