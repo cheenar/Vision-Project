@@ -60,11 +60,18 @@ global.mysql_util = require('./utils/mysql_util');
 global.mysql = require('mysql');
 
 global.connection = mysql.createConnection({
+	host: "66.175.213.218",
+	user: "root",
+	password: "poopPee123",
+	database: "Vision"
+});
+
+/*global.connection = mysql.createConnection({
 	host: "localhost",
 	user: "cheenar",
 	password: "poop123",
 	database: "Vision"
-});
+});*/
 
 global.lengthOfJson = function lengthOfJson(input) {
   var count = 0;
