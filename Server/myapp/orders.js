@@ -5,23 +5,14 @@ var Repeat = require("repeat");
 
 var db = null;
 
-function save() {
-    this.db.saveDatabase(function(err) {
-        if(err) {
-            console.log(err);
-        }
-        console.log("saved");
-    });
-}
-
 function initializeDatabase() {
-    var db = new loki("orders.json", {});
+    //var db = new loki("orders.json", {});
     this.db = new loki("orders.json");
 
     this.db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
-            Repeat(save).every(5000, 'ms').start.in('15', 'sec');
+            Repeat(this.db.saveDatabase).every(5000, 'ms').start.in('15', 'sec');
         }
     });;
 }
