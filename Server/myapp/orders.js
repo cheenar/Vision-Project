@@ -6,13 +6,12 @@ var Repeat = require("repeat");
 var db = null;
 
 function initializeDatabase() {
-    //var db = new loki("orders.json", {});
-    this.db = new loki("orders.json");
+    var db = new loki("orders.json", {});
 
-    this.db.loadDatabase({}, function(err, data) {
+    db.loadDatabase({}, function(err, data) {
         if(err == null) {
-            console.log(data);
-            Repeat(this.db.saveDatabase).every(5000, 'ms').start.in('15', 'sec');
+            Repeat(db.saveDatabase).every(5000, 'ms').start.in('15', 'sec');
+            this.db = db;
         }
     });;
 }
