@@ -60,7 +60,7 @@ global.mysql_util = require('./utils/mysql_util');
 global.mysql = require('mysql');
 
 global.connection = mysql.createConnection({
-	host: "66.175.213.218",
+	host: "localhost",
 	user: "root",
 	password: "poopPee123",
 	database: "Vision"
