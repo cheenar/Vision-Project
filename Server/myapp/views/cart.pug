@@ -42,13 +42,21 @@ html(lang='en')
         p Your cart is empty
         form(action='#0')
           .duplicate
-            .cabinet
-              img(style='width: 50%; height: auto;', src='images/cabinet2.png')
-            .store
-              ul(style='float: left;')
-                li test
-              |  
-              input#password(type='number', name='quantity', min='1', max='999', required='', placeholder='Quantity')
+            for order in orders 
+              .cabinet
+                img(style='width: 80%; height: auto;', src='images/cabinet2.png')
+                br
+                a(style='text-decoration: none; color: black;', href='/cart/remove?uoid=' + order.uoid, method="GET") REMOVE
+              .store
+                ul(style='float: left;text-align:left;')
+                  each value, key in order
+                    - var h = key
+                    - var p = value
+                    if h != "uoid" 
+                      li #{h}: #{p}
+                |  
+                input#password(type='number', name='quantity', min='1', max='999', required='', placeholder='Quantity' value='')
+                
           |  
           input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')
     script(src='javascripts/main.js', type='text/javascript')

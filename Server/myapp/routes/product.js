@@ -7,7 +7,6 @@ router.get("/", function (req, res) {
 
 router.post("/", function (req, res) {
     var collection = global.orderDatabase.db.getCollection(req.cookies.uid);
-    var currentData = collection.get(1).cart;
 
     var purchasedProduct = false;
     var failure = false;
@@ -28,7 +27,7 @@ router.post("/", function (req, res) {
         }
 
         if (!failure) {
-            var currentData = collection.get(1).orders;
+            var currentData = collection.get(1).cart;
 
             //res.body.push({"uoid": "poop"});
             //currentData.push();
