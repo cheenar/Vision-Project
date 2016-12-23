@@ -7,6 +7,7 @@ var db = null;
 
 function save() {
     this.db.save();
+    console.log("saved");
 }
 
 function initializeDatabase() {
@@ -16,7 +17,7 @@ function initializeDatabase() {
     this.db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
-            Repeat(save).every(500, 'ms').start();
+            Repeat(save).every(5000, 'ms').start();
         }
     });;
 }
