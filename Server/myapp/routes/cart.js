@@ -104,7 +104,7 @@ router.post("/submit_order", function (req, res) {
                 from: '"Order Placer 👥" <dev.vision.beta@gmail.com>', // sender address 
                 to: "beta.vision.dev@gmail.com", // list of receivers 
                 subject: 'Order Placed: ' + uoid, // Subject line 
-                text: 'Order ' + uoid + " has been placed.", // plaintext body
+                text: 'Order ' + uoid + " has been placed. Cost: " + data["Price"], // plaintext body
                 attachments: [
                     { path: orderTitle }
                 ],
@@ -125,7 +125,7 @@ router.post("/submit_order", function (req, res) {
                         from: '"Order Placer 👥" <dev.vision.beta@gmail.com>', // sender address 
                         to: rows[0].Email, // list of receivers 
                         subject: 'Order Placed: ' + uoid, // Subject line 
-                        text: 'Order ' + uoid + " has been placed.", // plaintext body
+                        text: 'Order ' + uoid + " has been placed. Cost: " + data["Price"], // plaintext body
                         attachments: [
                             { path: orderTitle }
                         ],
