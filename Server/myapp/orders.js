@@ -4,17 +4,16 @@ var loki = require("lokijs");
 var db = null;
 
 function initializeDatabase() {
-    var db = new loki("orders.json", {
-    });
-    this.db = db;
+    //var db = new loki("orders.json", {});
+    this.db = new loki("orders.json");
     
-    db.autosaveInterval = 5000;
-    db.autosaveEnable();
-    db.autosaveHandle = function() {
+    this.db.autosaveInterval = 5000;
+    this.db.autosaveEnable();
+    this.db.autosaveHandle = function() {
         console.log("Autosave Completed");
     }
     
-    db.loadDatabase({}, function(err, data) {
+    this.db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
         }
