@@ -267,6 +267,11 @@ outline:none;
   }
 }
 
+.duplicate {
+  padding: 0px;
+  border-radius: 20px;
+}
+
 .cabinet {
   max-width: 700px;
   float: right;

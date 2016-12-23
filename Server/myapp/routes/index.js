@@ -1,22 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-function lengthOfJson(input) {
-  var count = 0;
-  for (var kreme in input) {
-    count++;
-  }
-  return count;
-}
-
 router.get('/', function (req, res, next) {
   console.log(req.cookies);
   let name = req.cookies.name;
   if (name != null) {
-    res.render('index', { customer_name: "Welcome, " + name });
+    res.render('index', { welcomeTag: "Welcome, " + name + "." });
   } else {
-    res.render('index', { customer_name: "" }); 
+    res.render('index', { welcomeTag: "Welcome." }); 
   }
+});
+
+router.get('/save_database', function(req, res) {
+  global.orderDatabase.db.save();
+  res.redirect("/");
 });
 
 module.exports = router;

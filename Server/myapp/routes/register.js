@@ -12,6 +12,7 @@ router.post("/", function(req, res, next) {
     //INSERT INTO `Vision`.`Users` (`Name`, `UID`, `Email`, `Password`) VALUES ('TE', 'test', 'test', 'test');
     
     let pass = global.makeID(16);
+    let uid = global.makeID(16);
 
     global.connection.query(global.mysql_util.insertData('Users', {
         'Name': req.body.name,
@@ -19,9 +20,14 @@ router.post("/", function(req, res, next) {
         'Email': req.body.email_address,
         'BillingAddress': req.body.billing_address,
         'ShippingAddress': req.body.shipping_address,
-        'UID': global.makeID(16),
+        'UID': uid,
         'Password': pass
     }));
+
+    //create order database manager
+    global.orderDatabase.initializeUser(uid); 
+
+    //mailer 
 
     var mailOptions = {
         from: '"Vision Account Information 👥" <devteam@gmail.com>', // sender address 
