@@ -63,6 +63,7 @@ html(lang='en')
                   input#password(type='number', name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
                 
           |  
-          if orders.length != 0
-            input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')
+          if orders != null
+            if orders.length != 0
+              input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')
     script(src='javascripts/main.js', type='text/javascript')
