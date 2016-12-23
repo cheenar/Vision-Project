@@ -40,7 +40,7 @@ html(lang='en')
       #block
         h1 CART
         p Your cart is empty
-        form(action='#0')
+        form(action='/cart/submit_order', method="POST")
           .duplicate
             for order in orders 
               .cabinet
@@ -52,10 +52,10 @@ html(lang='en')
                   each value, key in order
                     - var h = key
                     - var p = value
-                    if h != "uoid" 
+                    if h != "uoid" && h != "quantity"
                       li #{h}: #{p}
                 |  
-                input#password(type='number', name='quantity', min='1', max='999', required='', placeholder='Quantity' value='')
+                input#password(type='number', name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
                 
           |  
           input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')
