@@ -1,5 +1,4 @@
 doctype html
-
 html(lang='en')
   head
     meta(charset='utf-8')
@@ -10,7 +9,7 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet')
     link(rel='stylesheet', href='stylesheets/normalize.css')
     link(rel='stylesheet', href='stylesheets/main.css')
-    link(rel='stylesheet', type='stylesheets/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    link(rel='stylesheet', type='text/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
   body#unlock
     #toggled
@@ -41,10 +40,9 @@ html(lang='en')
       #block
         h1 ACCOUNT OVERVIEW
         p
-        if accountLoggedIn
-          | #{name}
-        else
-          | You're Not Logged In
+          if !accountLoggedIn
+            | You appear to not be logged in. Please login 
+            a(style='text-decoraton: none; color: black;', href='/login') here
         .login-block
           form(action='/account/modify', method="POST")
             input#username(type='text', required='', placeholder= '', value= fullName, name="fullName")
@@ -59,8 +57,19 @@ html(lang='en')
             |  
             input.button(type='submit', value='SUBMIT CHANGES')
         h1 ORDER HISTORY
-        .cabinet
-          img(style='width: 50%; height: auto;', src='')
-        .store
-          ul(style='float: left;')
+        .duplicate
+            if uoids != null
+              for order in uoids
+                .cock_orders 
+                  .cabinet
+                    img(style='width: 80%; height: auto;', src='images/cabinet2.png')
+                  .store
+                    ul(style='float: left;text-align:left;')
+                      each value, key in order
+                        - var h = key
+                        - var p = value
+                        if h != "uoid" && h != "quantity"
+                          li #{h}: #{p}
+                    |  
+                    input#password(type='number', readonly, name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
     script(src='javascripts/main.js', type='text/javascript')

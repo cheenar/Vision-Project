@@ -272,6 +272,11 @@ outline:none;
   border-radius: 20px;
 }
 
+.cock_orders {
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+}
+
 .cabinet {
   max-width: 700px;
   float: right;

@@ -41,15 +41,15 @@ html(lang='en')
         form(action='/register', method="POST")
           h1 REGISTER
           |  
-          input#username(type='text', name='name', required='', placeholder='Full Name')
+          input#username(type='text', name='name',  placeholder='Full Name', required)
           |  
-          input#username(type='tel', name='phone_number', required='', placeholder='123-456-7890')
+          input#username(type='tel', name='phone_number',placeholder='123-456-7890', pattern='\d{3}[\-]\d{3}[\-]\d{4}', required)
           |  
-          input#username(type='text', name='shipping_address', required='', placeholder='Shipping Address')
+          input#username(type='text', name='shipping_address', placeholder='Shipping Address', required)
           |  
-          input#username(type='text', name='billing_address' required='', placeholder='Billing Address')
+          input#username(type='text', name='billing_address' ,placeholder='Billing Address', required)
           |  
-          input#username(type='email', name='email_address', required='', placeholder='Email Address')
+          input#username(type='email', name='email_address',  placeholder='Email Address', required)
           |  
           input.button(type='submit', value='SUBMIT')
     script(src='javascripts/main.js', type='text/javascript')

@@ -9,7 +9,7 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet')
     link(rel='stylesheet', href='stylesheets/normalize.css')
     link(rel='stylesheet', href='stylesheets/main.css')
-    link(rel='stylesheet', type='stylesheets/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    link(rel='stylesheet', type='text/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
   body
     #toggled
@@ -43,7 +43,8 @@ html(lang='en')
           input#username(type='email', name="email", required='', placeholder='Email Address')
           |  
           input#password(type='password', name="password", required='', placeholder='Password')
-          p(style='color:red') Incorrect Email Adddress or Password
+          if incorrectLogin 
+            p(style='color:red') Incorrect Email Adddress or Password
           |  
           a(style='text-decoration: none; color: black;', href='/register') Register
           |  | 
