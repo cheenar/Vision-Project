@@ -1,21 +1,22 @@
 //Import the necessary data
 var loki = require("lokijs");
 
+var Repeat = require("repeat");
+
 var db = null;
+
+function save() {
+    this.db.save();
+}
 
 function initializeDatabase() {
     //var db = new loki("orders.json", {});
-    this.db = new loki("orders.json", {
-        autosave: true,
-        autosaveInterval: 5000,
-        autosaveHandle: function() {
-            console.log("Autosave Completed");
-        }
-    });
-    
+    this.db = new loki("orders.json");
+
     this.db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
+            Repeat(save).every(500, 'ms').start();
         }
     });;
 }
