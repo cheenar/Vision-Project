@@ -4,7 +4,10 @@ var loki = require("lokijs");
 var db = null;
 
 function initializeDatabase() {
-    var db = new loki("orders.json");
+    var db = new loki("orders.json", {
+        autosave: true,
+        autosaveInterval: 60 * 1000,
+    });
     this.db = db;
     db.autosaveEnable();
     db.loadDatabase({}, function(err, data) {
