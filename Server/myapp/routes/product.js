@@ -36,8 +36,11 @@ router.post("/", function (req, res) {
             req.body.quantity = 1;
             
             currentData.push(req.body);
+            
 
             res.render('product', {purchased: true});
+
+            global.orderDatabase.db.save();
         }
         else {
             res.render('product', { purchased: false });

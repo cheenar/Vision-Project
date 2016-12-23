@@ -42,6 +42,8 @@ router.get("/remove", function (req, res) {
     }
 
     res.redirect('back');
+
+    global.orderDatabase.db.save();
 });
 
 router.post("/submit_order", function (req, res) {
@@ -142,10 +144,12 @@ router.post("/submit_order", function (req, res) {
             currentData.splice(0, currentData.length);
 
             res.redirect('/order');
+            
 
             //res.send(req.body);
         }
     }
+    global.orderDatabase.db.save();
 });
 
 module.exports = router;
