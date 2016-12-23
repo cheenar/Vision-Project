@@ -5,13 +5,13 @@ var db = null;
 
 function initializeDatabase() {
     //var db = new loki("orders.json", {});
-    this.db = new loki("orders.json");
-    
-    this.db.autosaveInterval = 5000;
-    this.db.autosaveEnable();
-    this.db.autosaveHandle = function() {
-        console.log("Autosave Completed");
-    }
+    this.db = new loki("orders.json", {
+        autosave: true,
+        autosaveInterval: 5000,
+        autosaveHandle: function() {
+            console.log("Autosave Completed");
+        }
+    });
     
     this.db.loadDatabase({}, function(err, data) {
         if(err == null) {
