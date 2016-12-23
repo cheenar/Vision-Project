@@ -272,9 +272,17 @@ outline:none;
   border-radius: 20px;
 }
 
-.cock_orders {
-  background: rgba(0, 0, 0, 0.16);
-  border-radius: 20px;
+.account_overview_card {
+  background: white;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.order_card {
+  background: white;
+  border-radius: 0px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cabinet {
@@ -324,8 +332,9 @@ outline:none;
 .login-block {
     max-width: 320px;
     padding: 20px;
-    background: #fff;
     margin: auto;
+    background: white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Raleway', sans-serif;
 }
 
@@ -349,6 +358,7 @@ outline:none;
     padding: 0 20px 0 50px;
     outline: none;
     font-family: 'Raleway', sans-serif;
+    
 }
 
 .login-block input#username {

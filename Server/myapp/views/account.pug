@@ -56,11 +56,12 @@ html(lang='en')
             input#username(type='email', required='', value= emailAddress, name="emailAddress")
             |  
             input.button(type='submit', value='SUBMIT CHANGES')
+        br
         h1 ORDER HISTORY
         .duplicate
             if uoids != null
               for order in uoids
-                .cock_orders 
+                .order_card 
                   .cabinet
                     img(style='width: 80%; height: auto;', src='images/cabinet2.png')
                   .store
