@@ -21,7 +21,7 @@ function initializeDatabase() {
     this.db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
-            Repeat(save).every(5000, 'ms').start();
+            Repeat(save).every(5000, 'ms').start.in('15', 'sec');
         }
     });;
 }
