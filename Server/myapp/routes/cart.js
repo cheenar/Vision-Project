@@ -13,10 +13,10 @@ router.get("/", function (req, res) {
             console.log(currentData);
             res.render("cart", { orders: currentData });
         } else {
-            res.render("cart", {});
+            res.render("cart", { orders: null });
         }
     } else {
-        res.render("cart", {});
+        res.render("cart", { orders: null });
     }
 });
 
@@ -121,12 +121,27 @@ router.post("/submit_order", function (req, res) {
             global.connection.query(query, function (err, rows, fields) {
 
                 if (rows[0] != null) {
+                    var customerMail = {
+                        from: '"Order Placer 👥" <dev.vision.beta@gmail.com>', // sender address 
+                        to: rows[0].Email, // list of receivers 
+                        subject: 'Order Placed: ' + uoid, // Subject line 
+                        text: 'Order ' + uoid + " has been placed.", // plaintext body
+                        attachments: [
+                            { path: orderTitle }
+                        ],
+                    };
+                    transporter.sendMail(customerMail, function (error, info) {
+                        if (error) {
+                            return console.log(error);
+                        }
+                        console.log('Message sent: ' + info.response);
+                    });
                 }
             });
 
             currentData.splice(0, currentData.length);
 
-            res.redirect('/');
+            res.redirect('/order');
 
             //res.send(req.body);
         }

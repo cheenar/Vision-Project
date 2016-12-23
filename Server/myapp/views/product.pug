@@ -11,6 +11,15 @@ html(lang='en')
     link(rel='stylesheet', href='stylesheets/main.css')
     link(rel='stylesheet', type='text/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script.
+      function calculatePrice() {
+        return ( document.getElementById('Width').value * document.getElementById('Height').value * document.getElementById('Depth').value);
+      }
+      function updatePrice() {
+        document.getElementById('yourPrice').value = "Your Price: $" + calculatePrice();
+      }
+
+
   body#unlock
     #toggled
       a#close(href='javascript:void(0)')
@@ -29,6 +38,8 @@ html(lang='en')
         a(href='/information') INFORMATION
         |  
         a(href='/account') ACCOUNT OVERVIEW
+        |  
+        a(href="/logout") LOGOUT
     header#unlock
       nav
         a(href='/')
@@ -43,11 +54,11 @@ html(lang='en')
           img(style='width: 100%; height: auto;', src='images/cabinet2.png')
         .store
           form(action='/product', method="POST")
-            input#password(type='number', name='Width', min='9', max='42', required='', placeholder='Width (9-42 inches)')
+            input#Width(type='number', name='Width', min='9', max='42', required='', placeholder='Width (9-42 inches)', onkeyup="updatePrice()")
             |  
-            input#password(type='number', name='Height', min='18', max='60', required='', placeholder='Height (18-68 inches)')
+            input#Height(type='number',  name='Height', min='18', max='60', required='', placeholder='Height (18-68 inches)', onkeyup="updatePrice()")
             |  
-            input#password(type='number', name='Depth', min='9', max='30', required='', placeholder='Depth (9-30 inches)')
+            input#Depth(type='number',  name='Depth', min='9', max='30', required='', placeholder='Depth (9-30 inches)', onkeyup="updatePrice()")
             |  
             input#password(type='number', name='Rollouts', min='0', max='3', required='', placeholder='Rollouts (0-3)')
             |  
@@ -136,9 +147,9 @@ html(lang='en')
               option(value='BRS') Brownstone 2
               option(value='WBS') Winter Bark 2
               option(value='ESS') Espresso 2
-            p YOUR PRICE:
+            input#yourPrice(type='text', value='', name="Price")
             |  
-            input.button(type='submit', value='ADD TO CART')
+            input.button(type='submit', value='ADD TO CART' onclick="document.getElementById('yourPrice').value = '$' + calculatePrice()")
           if purchased
             p You&apos;ve succesfully added this product to your cart
     script(src='javascripts/main.js', type='text/javascript')

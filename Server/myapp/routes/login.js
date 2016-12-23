@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
-  res.render('login', {});
+  res.render('login', {incorrectLogin: false});
 });
 
 router.post("/", function (req, res) {
@@ -25,7 +25,7 @@ router.post("/", function (req, res) {
       }
     }
     if (failed) {
-      res.send("Username or Password Incorrect"); //#TODO - ADD A FAILED USER PAGE
+      res.render('login', {incorrectLogin: true});
     }
   });
 });
