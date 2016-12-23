@@ -5,11 +5,12 @@ var db = null;
 
 function initializeDatabase() {
     var db = new loki("orders.json", {
-        autosave: true,
-        autosaveInterval: 5000,
     });
     this.db = db;
-    //db.autosaveEnable();
+    
+    db.autosaveInterval = 5000;
+    db.autosaveEnable();
+    
     db.loadDatabase({}, function(err, data) {
         if(err == null) {
             console.log(data);
