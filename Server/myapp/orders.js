@@ -1,8 +1,6 @@
 //Import the necessary data
 var loki = require("lokijs");
 
-var Repeat = require("repeat");
-
 var db = null;
 
 function initializeDatabase() {

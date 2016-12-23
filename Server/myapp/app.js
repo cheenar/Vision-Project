@@ -29,7 +29,9 @@ var app = express();
 global.orderDatabase = require("./orders.js");
 global.orderDatabase.initializeDatabase();
 
-global.orderDatabase.initializeUser("9HhnfNuQ9uSLPxuX");
+var Repeat = require("repeat");
+Repeat(global.orderDatabase.db.save).every(5000, 'ms').start.in('5', 'sec');
+//global.orderDatabase.db.save();
 
 /*var collection = global.orderDatabase.db.getCollection("9HhnfNuQ9uSLPxuX");
 var currentData = collection.get(1).orders;
