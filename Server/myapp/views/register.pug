@@ -36,18 +36,18 @@ html(lang='en')
         a#menu(href='javascript:void(0)')
           i.ion-navicon-round
       .login-block
-        form(action='/email')
+        form(action='/register', method="POST")
           h1 REGISTER
           |  
-          input#username(type='text', required='', placeholder='Full Name')
+          input#username(type='text', name='name', required='', placeholder='Full Name')
           |  
-          input#username(type='tel', required='', placeholder='123-456-7890', pattern='\d{3}[\-]\d{3}[\-]\d{4}')
+          input#username(type='tel', name='phone_number', required='', placeholder='123-456-7890')
           |  
-          input#username(type='text', required='', placeholder='Shipping Address')
+          input#username(type='text', name='shipping_address', required='', placeholder='Shipping Address')
           |  
-          input#username(type='text', required='', placeholder='Billing Address')
+          input#username(type='text', name='billing_address' required='', placeholder='Billing Address')
           |  
-          input#username(type='email', required='', placeholder='Email Address')
+          input#username(type='email', name='email_address', required='', placeholder='Email Address')
           |  
           input.button(type='submit', value='SUBMIT')
     script(src='javascripts/main.js', type='text/javascript')
