@@ -61,8 +61,8 @@ global.mysql = require('mysql');
 
 global.connection = mysql.createConnection({
 	host: "localhost",
-	user: "root",
-	password: "poopPee123",
+	user: "cheenar",
+	password: "cheenar123",
 	database: "Vision"
 });
 
