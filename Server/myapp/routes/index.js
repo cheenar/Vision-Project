@@ -3,12 +3,13 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
   console.log(req.cookies);
-  let name = req.cookies.name;
+  /*let name = req.cookies.name;
   if (name != null && name != "") {
     res.render('index', { welcomeTag: "Welcome, " + name + "." });
   } else {
     res.render('index', { welcomeTag: "" }); 
-  }
+  }*/
+  res.render('index', { welcomeTag: "Welcome!" }); 
 });
 
 router.get("/order", function(req, res) {
