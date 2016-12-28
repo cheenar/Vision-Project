@@ -9,7 +9,7 @@ function lengthOfJson(input)
 
 function insertData(tableName, keypair)
 {
-	var returnString = "INSERT INTO `Vision`.`" + tableName + "` (";
+	var returnString = "INSERT INTO `sql9151386`.`" + tableName + "` (";
 	var values = " VALUES (";
 	var maxLength = 0;
 

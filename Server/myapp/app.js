@@ -60,10 +60,10 @@ global.mysql_util = require('./utils/mysql_util');
 global.mysql = require('mysql');
 
 global.connection = mysql.createConnection({
-	host: "66.175.213.218",
-	user: "cheenar",
-	password: "cheenar123",
-	database: "Vision"
+	host: "sql9.freesqldatabase.com",
+	user: "sql9151386",
+	password: "AfelpmYUxF",
+	database: "sql9151386"
 });
 
 /*global.connection = mysql.createConnection({
