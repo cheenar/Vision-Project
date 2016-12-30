@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Vision | Login
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet')
+    link(rel='stylesheet', href='stylesheets/normalize.css')
+    link(rel='stylesheet', href='stylesheets/main.css')
+    link(rel='stylesheet', type='text/css', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+  body
+    #toggled
+      a#close(href='javascript:void(0)')
+        i.ion-close
+      #menu-wrapper
+        h1 MENU
+        |  
+        a(href='/') HOME
+        |  
+        a(href='/login') CUSTOMER LOGIN
+        |  
+        a(href='/custom') CUSTOM CABINETS
+        |  
+        a(href='/base') BASE CABINETS
+        |  
+        a(href='/information') INFORMATION
+        |  
+        a(href='/account') ACCOUNT OVERVIEW
+        |  
+        a(href="/logout") LOGOUT
+    header
+      nav
+        a(href='/')
+          img(src='images/logo.png')
+        a#menu(href='javascript:void(0)')
+          i.ion-navicon-round
+      .login-block
+        h1 CUSTOMER ACCOUNT
+        form(action='/login', method="POST")
+          input#username(type='email', name="email", required='', placeholder='Email Address')
+          |  
+          input#password(type='password', name="password", required='', placeholder='Password')
+          if incorrectLogin 
+            p(style='color:red') Incorrect Email Adddress or Password
+          |  
+          a(style='text-decoration: none; color: black;', href='/register') Register
+          |  | 
+          a(style='text-decoration: none; color: black;', href='/password') Change Password
+          br
+          br
+          |  
+          input.button(type='submit', value='LOGIN')
+    script(src='javascripts/main.js', type='text/javascript')
