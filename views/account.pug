@@ -95,25 +95,26 @@ html(lang='en')
                   th Material
                   th Quantity
                   th ID
-                for order in uoids 
-                  - var orderUOID = order.uoid
-                  input(type="hidden", name="uoid", value= orderUOID)
-                  tr
-                    td #{order.ProductName}
-                    td #{order.Width}
-                    td #{order.Height}
-                    td #{order.Depth}
-                    td #{order.Rollouts}
-                    td #{order['Hinge Sides']}
-                    td #{order['Finish Sides']}
-                    td #{order['Hinge Type']}
-                    td #{order['Glide Type']}
-                    td #{order['Drawer Box']}
-                    td #{order['Glaze']}
-                    td #{order['Interior Color']}
-                    td #{order['Door Style']}
-                    td #{order['Finish Material']}
-                    td #{order['Material']}
-                    td #{order['quantity']}
-                    td #{order['uoid']}
+                if uoids != null
+                  for order in uoids 
+                    - var orderUOID = order.uoid
+                    input(type="hidden", name="uoid", value= orderUOID)
+                    tr
+                      td #{order.ProductName}
+                      td #{order.Width}
+                      td #{order.Height}
+                      td #{order.Depth}
+                      td #{order.Rollouts}
+                      td #{order['Hinge Sides']}
+                      td #{order['Finish Sides']}
+                      td #{order['Hinge Type']}
+                      td #{order['Glide Type']}
+                      td #{order['Drawer Box']}
+                      td #{order['Glaze']}
+                      td #{order['Interior Color']}
+                      td #{order['Door Style']}
+                      td #{order['Finish Material']}
+                      td #{order['Material']}
+                      td #{order['quantity']}
+                      td #{order['uoid']}
     script(src='javascripts/main.js', type='text/javascript')
