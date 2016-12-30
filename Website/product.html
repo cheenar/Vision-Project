@@ -72,10 +72,14 @@
             </div>
                 <div class="store">
                     <form action="#0">
-                      <input type="number" name="width" min="9" max="42" id="password" required placeholder="Width (9-42 inches)" />
-                      <input type="number" name="height" min="18" max="60" id="password" required placeholder="Height (18-68 inches)" />
-                      <input type="number" name="depth" min="9" max="30" id="password" required placeholder="Depth (9-30 inches)" />
-                      <input type="number" name="rollouts" min="0" max="3" id="password" required placeholder="Rollouts (0-3)" />
+                      <p>Width (9-42 inches):</p>
+                      <input type="number" name="width" min="9" max="42" id="password" required placeholder="9-42" />
+                      <p>Height (18-60 inches):</p>
+                      <input type="number" name="height" min="18" max="60" id="password" required placeholder="18-60" />
+                      <p>Depth (9-30 inches):</p>
+                      <input type="number" name="depth" min="9" max="30" id="password" required placeholder="9-30" />
+                      <p>Rollouts (0-3):</p>
+                      <input type="number" name="rollouts" min="0" max="3" id="password" required placeholder="0-3" />
                         <select class="custom-dropdown" name="Hinge Sides" required>
                             <option value="">Select Hinge Side</option>
                             <option value="L">Left Hinge</option>
@@ -162,10 +166,12 @@
                             <option value="WBS">Winter Bark 2</option>
                             <option value="ESS">Espresso 2</option>
                         </select>
+                        <p>Quantity:</p>
+                        <input type="number" name="rollouts" min="1" max="" id="password" required placeholder="1" />
                         <p>YOUR PRICE:</p>
                         <input class="button" type="submit" value="ADD TO CART" />
                     </form>
-                    <p>You've succesfully added this product to your cart</p>
+                    <p style="text-align: center;">You've succesfully added this product to your cart</p>
                 </div>
         </div>
 
