@@ -84,7 +84,8 @@ global.lengthOfJson = function lengthOfJson(input) {
 global.makeID = function makeid(length)
 {
     var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    //var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var possible = "ABC0123456789";
 
     for( var i=0; i < length; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));

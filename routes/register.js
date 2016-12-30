@@ -15,7 +15,8 @@ router.post("/", function(req, res, next) {
     let uid = global.makeID(16);
 
     global.connection.query(global.mysql_util.insertData('Users', {
-        'Name': req.body.name,
+        'FirstName': req.body.firstName,
+        'LastName': req.body.lastName,
         'PhoneNumber': req.body.phone_number,
         'Email': req.body.email_address,
         'BillingAddress': req.body.billing_address,

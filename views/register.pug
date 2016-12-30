@@ -41,7 +41,9 @@ html(lang='en')
         form(action='/register', method="POST")
           h1 REGISTER
           |  
-          input#username(type='text', name='name',  placeholder='Full Name', required)
+          input#username(type='text', name='firstName',  placeholder='First Name', required)
+          |  
+          input#username(type='text', name='lastName',  placeholder='Last Name', required)
           |  
           input#username(type='tel', name='phone_number',placeholder='123-456-7890', required)
           |  

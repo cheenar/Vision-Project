@@ -39,38 +39,81 @@ html(lang='en')
           i.ion-navicon-round
       #block
         h1 ACCOUNT OVERVIEW
-        p
-          if !accountLoggedIn
+        if !accountLoggedIn
+          p
             | You appear to not be logged in. Please login 
-            a(style='text-decoraton: none; color: black;', href='/login') here
+          a(style='text-decoraton: none; color: black;', href='/login') here
         .login-block
-          form(action='/account/modify', method="POST")
-            input#username(type='text', required='', placeholder= '', value= fullName, name="fullName")
+          form(action='/account/modify', method='POST')
+            label First Name:
             |  
-            input#username(type='tel', required='', value= phoneNumber, name="phoneNumber")
+            input#username(type='text', name='firstName', required='', placeholder='John', value= firstName)
             |  
-            input#username(type='text', required='', value= shippingAddress, , name="shippingAddress")
+            label Last Name:
             |  
-            input#username(type='text', required='', value= billingAddress, name="billingAddress")
+            input#username(type='text', name='lastName', required='', placeholder='Smith', value= lastName)
             |  
-            input#username(type='email', required='', value= emailAddress, name="emailAddress")
+            label Phone Number
+            |  
+            input#username(type='tel', required='', name='phoneNumber', placeholder='123-456-7890', value= phoneNumber)
+            |  
+            label Shipping Address
+            |  
+            input#username(type='text', required='', name='shippingAddress', placeholder='5614 E Powhatan Ave', value= shippingAddress)
+            |  
+            label Billing Address:
+            |  
+            input#username(type='text', required='', name='billingAddress', placeholder='5614 E Powhatan Ave', value= billingAddress)
+            |  
+            label Email Address:
+            |  
+            input#username(type='email', required='', name='emailAddress', placeholder='example@domain.com', value= emailAddress)
+            |  
+            label Password:
+            |  
+            input#username(type='text', required='', name='password', placeholder='', value= password)
             |  
             input.button(type='submit', value='SUBMIT CHANGES')
-        br
         h1 ORDER HISTORY
         .duplicate
-            if uoids != null
-              for order in uoids
-                .order_card 
-                  .cabinet
-                    img(style='width: 80%; height: auto;', src='images/cabinet2.png')
-                  .store
-                    ul(style='float: left;text-align:left;')
-                      each value, key in order
-                        - var h = key
-                        - var p = value
-                        if h != "uoid" && h != "quantity"
-                          li #{h}: #{p}
-                    |  
-                    input#password(type='number', readonly, name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
+              table
+                tr
+                  th Product Name
+                  th Width (inches)
+                  th Height (inches)
+                  th Depth (inches)
+                  th Rollouts
+                  th Hinge Side
+                  th Finish Side
+                  th Hinge Type
+                  th Glide Type
+                  th Drawer Box
+                  th Glaze
+                  th Interior Color
+                  th Door Style
+                  th Finish Material
+                  th Material
+                  th Quantity
+                  th ID
+                for order in uoids 
+                  - var orderUOID = order.uoid
+                  input(type="hidden", name="uoid", value= orderUOID)
+                  tr
+                    td #{order.ProductName}
+                    td #{order.Width}
+                    td #{order.Height}
+                    td #{order.Depth}
+                    td #{order.Rollouts}
+                    td #{order['Hinge Sides']}
+                    td #{order['Finish Sides']}
+                    td #{order['Hinge Type']}
+                    td #{order['Glide Type']}
+                    td #{order['Drawer Box']}
+                    td #{order['Glaze']}
+                    td #{order['Interior Color']}
+                    td #{order['Door Style']}
+                    td #{order['Finish Material']}
+                    td #{order['Material']}
+                    td #{order['quantity']}
+                    td #{order['uoid']}
     script(src='javascripts/main.js', type='text/javascript')

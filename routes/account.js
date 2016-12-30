@@ -23,7 +23,7 @@ router.get("/", function (req, res, next) {
         if(currentData != null) {
           for(ki in currentData) {
             if(ki != null) {
-              console.log("UOID:" + currentData[ki].uoid);
+              console.log("UOID:" + currentData[ki]);
               uoids.push(currentData[ki]);
             }
           }
@@ -31,12 +31,13 @@ router.get("/", function (req, res, next) {
 
           res.render("account", {
             'accountLoggedIn': true,
-            'name': req.cookies.name,
-            "fullName": data.Name,
+            'firstName': data.FirstName,
+            'lastName': data.LastName,
             "phoneNumber": data.PhoneNumber,
             "shippingAddress": data.ShippingAddress,
             "billingAddress": data.BillingAddress,
             "emailAddress": data.Email,
+            "password": data.Password,
             "uoids": uoids,
           });
         } else {
@@ -51,21 +52,21 @@ router.get("/", function (req, res, next) {
 });
 
 router.post("/modify", function(req, res) {
-  let query = modifyAccount(req.cookies.uid, req.body.fullName, req.body.phoneNumber, req.body.shippingAddress, req.body.billingAddress, req.body.emailAddress);
+  let query = modifyAccount(req.cookies.uid, req.body.firstName, req.body.lastName, req.body.phoneNumber, req.body.shippingAddress, req.body.billingAddress, req.body.emailAddress, req.body.password);
   
   console.log(query);
   global.connection.query(query, function(err, rows, fields) {
     if(err) {
       console.log("Err:\n" + err);
     } else {
-      res.cookie("name", req.body.fullName);
+      res.cookie("name", req.body.firstName);
       res.redirect("/account"); 
     }
   });
 })
 
-function modifyAccount(uid, name, number, addressS, addressB, email) {
-  return "UPDATE `Users` SET `Name`='" + name +  "',`Email`='" + email + "',`PhoneNumber`='" + number + "',`BillingAddress`='" + addressB + "',`ShippingAddress`='" + addressS + "' WHERE `UID`='" + uid + "'"
+function modifyAccount(uid, firstName, lastName, number, addressS, addressB, email, password) {
+  return "UPDATE `Users` SET `FirstName`='" + firstName +  "',`LastName`='" + lastName + "',`Email`='" + email + "',`PhoneNumber`='" + number + "',`BillingAddress`='" + addressB + "',`ShippingAddress`='" + addressS + "',`Password`='" + password + "' WHERE `UID`='" + uid + "'"
 }
 
 module.exports = router;

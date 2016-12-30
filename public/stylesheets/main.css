@@ -253,7 +253,6 @@ outline:none;
   height: auto;
   padding: 20px;
   background: #fff;
-  opacity: 0.8;
   border-radius: 5px;
   margin: 0 auto;
   margin-bottom: 150px;
@@ -266,24 +265,6 @@ outline:none;
   .store, .cabinet {
     width: 40%;
   }
-}
-
-.duplicate {
-  padding: 0px;
-  border-radius: 20px;
-}
-
-.account_overview_card {
-  background: white;
-  border-radius: 0px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.order_card {
-  background: white;
-  border-radius: 0px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cabinet {
@@ -300,6 +281,11 @@ outline:none;
   padding: 20px;
   margin-bottom: 150px;
   font-family: 'Raleway', sans-serif;
+}
+
+.store p {
+  text-align: left;
+  margin: auto;
 }
 
 .store input {
@@ -333,9 +319,8 @@ outline:none;
 .login-block {
     max-width: 320px;
     padding: 20px;
+    background: #fff;
     margin: auto;
-    background: white;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Raleway', sans-serif;
 }
 
@@ -359,7 +344,6 @@ outline:none;
     padding: 0 20px 0 50px;
     outline: none;
     font-family: 'Raleway', sans-serif;
-    
 }
 
 .login-block input#username {
@@ -451,4 +435,25 @@ div.products img {
   height: auto;
   display: block;
   transition: transform .2s ease-in-out;
+}
+
+label {
+  float: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr {background-color: #f2f2f2}
+
+th {
+    background-color: #F27E7E;
+    color: white;
 }

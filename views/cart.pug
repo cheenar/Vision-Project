@@ -47,24 +47,49 @@ html(lang='en')
               p Your cart is empty
           form(action='/cart/submit_order', method="POST")
             .duplicate
-              if orders != null
+              table
+                tr
+                  th Product Name
+                  th Width (inches)
+                  th Height (inches)
+                  th Depth (inches)
+                  th Rollouts
+                  th Hinge Side
+                  th Finish Side
+                  th Hinge Type
+                  th Glide Type
+                  th Drawer Box
+                  th Glaze
+                  th Interior Color
+                  th Door Style
+                  th Finish Material
+                  th Material
+                  th Quantity
                 for order in orders 
-                  .cabinet
-                    img(style='width: 80%; height: auto;', src='images/cabinet2.png')
-                    br
-                    a(style='text-decoration: none; color: black;', href='/cart/remove?uoid=' + order.uoid, method="GET") REMOVE
-                  .store
-                    ul(style='float: left;text-align:left;')
-                      each value, key in order
-                        - var h = key
-                        - var p = value
-                        if h != "uoid" && h != "quantity"
-                          li #{h}: #{p}
-                    |  
-                    input#password(type='number', name=order.uoid + '_quantity', min='1', max='999', required='', placeholder='Quantity' value=order.quantity)
-                  
+                  - var orderUOID = order.uoid
+                  input(type="hidden", name="uoid", value= orderUOID)
+                  tr
+                    td #{order.ProductName}
+                    td #{order.Width}
+                    td #{order.Height}
+                    td #{order.Depth}
+                    td #{order.Rollouts}
+                    td #{order['Hinge Sides']}
+                    td #{order['Finish Sides']}
+                    td #{order['Hinge Type']}
+                    td #{order['Glide Type']}
+                    td #{order['Drawer Box']}
+                    td #{order['Glaze']}
+                    td #{order['Interior Color']}
+                    td #{order['Door Style']}
+                    td #{order['Finish Material']}
+                    td #{order['Material']}
+                    td #{order['quantity']}
+                    td
+                      a(style='text-decoration: none; color: red;', href='/cart/remove?uoid=' + order.uoid, method="GET") REMOVE
             |  
             if orders != null
               if orders.length != 0
-                input.button(style='width: 40%; margin-bottom: 50px; margin-top: 30vh;', type='submit', value='SUBMIT ORDER')
+                
+                input.button(style='width: 40%; margin-bottom: 30px; margin-top: 50px;', type='submit', value='SUBMIT ORDER')
     script(src='javascripts/main.js', type='text/javascript')

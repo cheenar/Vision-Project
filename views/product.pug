@@ -47,12 +47,16 @@ html(lang='en')
           img(style='width: 100%; height: auto;', src='images/cabinet2.png')
         .store
           form(action='/product', method="POST")
+            p Width (9-42 Inches):
             input#Width(type='number', name='Width', min='9', max='42', required='', placeholder='Width (9-42 inches)', onkeyup="updatePrice()")
             |  
+            p Height(18-60 Inches):
             input#Height(type='number',  name='Height', min='18', max='60', required='', placeholder='Height (18-68 inches)', onkeyup="updatePrice()")
             |  
+            p Depth (9-30 Inches):
             input#Depth(type='number',  name='Depth', min='9', max='30', required='', placeholder='Depth (9-30 inches)', onkeyup="updatePrice()")
             |  
+            p Rollouts(0-3):
             input#password(type='number', name='Rollouts', min='0', max='3', required='', placeholder='Rollouts (0-3)')
             |  
             select.custom-dropdown(name='Hinge Sides', required='')
@@ -140,7 +144,10 @@ html(lang='en')
               option(value='BRS') Brownstone 2
               option(value='WBS') Winter Bark 2
               option(value='ESS') Espresso 2
-            input#yourPrice(type='text', value='', name="Price")
+            input#yourPrice(type='text', value='', placeholder="Price", name="Price")
+            |  
+            p Quantity:
+            input#Width(type='number', name='quantity', min='1', required='', value='1')
             |  
             input.button(type='submit', value='ADD TO CART' onclick="document.getElementById('yourPrice').value = '$' + calculatePrice()")
           if purchased

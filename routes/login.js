@@ -20,7 +20,7 @@ router.post("/", function (req, res) {
         failed = true;
       } else {
         res.cookie('uid', rows[0].UID);
-        res.cookie('name', rows[0].Name);
+        res.cookie('name', rows[0].FirstName);
         res.redirect("/");
       }
     }
