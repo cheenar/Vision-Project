@@ -13,7 +13,7 @@ let pins = 0.02;
 let t = 0.625
 
 
-let left = function(d, h) {
+let left = function (d, h) {
     return (d * h / 144) * sqft;
 }
 
@@ -30,7 +30,7 @@ let spanner = function(w) {
 let nailer = spanner;
 
 let shelf = function(w, d) {
-    return ((w - t) * (2 - 1/8)) * (d - 1.5) / 144 * sqft;
+    return ((w - t * 2 - 1/8)) * (d - 1.5) / 144 * sqft;
 }
 
 let back = function(w, h) {
