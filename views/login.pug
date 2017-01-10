@@ -40,8 +40,10 @@ html(lang='en')
       .login-block
         h1 CUSTOMER ACCOUNT
         form(action='/login', method="POST")
+          label Email Adddress:
           input#username(type='email', name="email", required='', placeholder='Email Address')
           |  
+          label Password:
           input#password(type='password', name="password", required='', placeholder='Password')
           if incorrectLogin 
             p(style='color:red') Incorrect Email Adddress or Password

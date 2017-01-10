@@ -14,13 +14,21 @@ router.post("/", function(req, res, next) {
     let pass = global.makeID(16);
     let uid = global.makeID(16);
 
+    let shipping = req.body["sa.shipping1"];
+    let city = req.body["sa.city"];
+    let state = req.body["sa.state"];
+    let zip = req.body["sa.zip"];
+
+    let shippingAddressStr = shipping + ":" + city + ":" + state + ":" + zip;
+    
+    
     global.connection.query(global.mysql_util.insertData('Users', {
         'FirstName': req.body.firstName,
         'LastName': req.body.lastName,
         'PhoneNumber': req.body.phone_number,
         'Email': req.body.email_address,
-        'BillingAddress': req.body.billing_address,
-        'ShippingAddress': req.body.shipping_address,
+        'BillingAddress': req.body["sa.shipping2"],
+        'ShippingAddress': shippingAddressStr,
         'UID': uid,
         'Password': pass
     }));
