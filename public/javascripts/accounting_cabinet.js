@@ -69,6 +69,10 @@ function setValue(name, value) {
     document.getElementById(name).value = value;
 }
 
+let pinsCost = pins * 4;
+let dowelCost = dowel * 34;
+let screwsCost = screws * 26;
+
 function calculatePrice() {
 
     console.log(getValue("doorStyleSelector"));    
@@ -80,10 +84,6 @@ function calculatePrice() {
     //let cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + doors(w, h) + drawerFront(w) + cardboard(w, h, d) + glides + hinges + plates + bumpers + pins + dowel + screws;
 
     let cost = -1;
-    
-let pinsCost = function() { return pins * 4; }
-let dowelCost = function() { return dowel * 34; }
-let screwsCost = function() { return screws * 26; }
 
     cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + doors(w, h) + drawerFront(w) + cardboard(w, h, d) + glides + hinges + plates + bumpers + pinsCost + dowelCost + screwsCost;
     
