@@ -46,25 +46,25 @@ html(lang='en')
         .login-block
           form(action='/account/modify', method='POST')
             label First Name:
-            input#username(type='text', name='firstName',  placeholder= firstName)
+            input#username(type='text', name='firstName',  value= firstName)
             |  
             label Last Name:
-            input#username(type='text', name='lastName',  placeholder= lastName)
+            input#username(type='text', name='lastName',  value= lastName)
             |  
             label Phone Number:
-            input#username(type='tel', name='phone_number',placeholder= phoneNumber)
+            input#username(type='text', name='phoneNumber',value= phoneNumber)
             |  
             label Shipping Address 1
             |  
-            input#username(type='text', name="sa.shipping1", placeholder= saAddress)
+            input#username(type='text', name="sa.shipping1", value= saAddress)
             |  
             label Shipping Address 2:
             |  
-            input#username(type='text', name="sa.shipping2", placeholder= billingAddress)
+            input#username(type='text', name="sa.shipping2", value= billingAddress)
             |  
             label City:
             |  
-            input#username(type='text', name="sa.city", placeholder= saCity)
+            input#username(type='text', name="sa.city", value= saCity)
             |  
             label State:
             |  
@@ -124,10 +124,10 @@ html(lang='en')
             |  
             label Zip Code:
             |  
-            input#username(type='number', name="sa.zip", placeholder= saZip)
+            input#username(type='number', name="sa.zip", value= saZip)
             |  
             label E-Mail
-            input#username(type='email', name='email_address',  placeholder=emailAddress)
+            input#username(type='email', name='emailAddress',  value=emailAddress)
             |  
             input.button(type='submit', value='SUBMIT CHANGES')
         h1 ORDER HISTORY

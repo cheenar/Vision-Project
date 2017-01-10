@@ -17,7 +17,8 @@ router.get("/", function (req, res, next) {
 
                     var collection = global.orderDatabase.db.getCollection(uid);
 
-                    if(collection.get(1) == null) res.render("account", {'accountLoggedIn': false});
+                    if (collection == null) global.orderDatabase.initializeUser(uid); 
+                    collection = global.orderDatabase.db.getCollection(uid);
 
                     var currentData = collection.get(1).orders;
 
@@ -67,7 +68,7 @@ router.post("/modify", function (req, res) {
 
     let shippingAddressStr = shipping + ":" + city + ":" + state + ":" + zip;
 
-    let query = modifyAccount(req.cookies.uid, req.body.firstName, req.body.lastName, req.body.phoneNumber, shippingAddressStr, req.body.billingAddress, req.body.emailAddress, req.body.password);
+    let query = modifyAccount(req.cookies.uid, req.body.firstName, req.body.lastName, req.body["phoneNumber"], shippingAddressStr, req.body["sa.shipping2"], req.body.emailAddress, req.body.password);
 
     console.log(query);
     global.connection.query(query, function (err, rows, fields) {
@@ -80,8 +81,8 @@ router.post("/modify", function (req, res) {
     });
 })
 
-function modifyAccount(uid, firstName, lastName, number, addressS, addressB, email, password) {
-    return "UPDATE `Users` SET `FirstName`='" + firstName + "',`LastName`='" + lastName + "',`Email`='" + email + "',`PhoneNumber`='" + number + "',`BillingAddress`='" + addressB + "',`ShippingAddress`='" + addressS + "',`Password`='" + password + "' WHERE `UID`='" + uid + "'"
+function modifyAccount(uid, firstName, lastName, asdf, addressS, addressB, email, password) {
+    return "UPDATE `Users` SET `FirstName`='" + firstName + "',`LastName`='" + lastName + "',`Email`='" + email + "',`PhoneNumber`='" + asdf + "',`BillingAddress`='" + addressB + "',`ShippingAddress`='" + addressS + "',`Password`='" + password + "' WHERE `UID`='" + uid + "'"
 }
 
 module.exports = router;

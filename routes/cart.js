@@ -124,7 +124,7 @@ router.post("/submit_order", function (req, res) {
             if (rows[0] != null) {
                 var customerMail = {
                     from: '"Order Placer 👥" <dev.vision.beta@gmail.com>', // sender address 
-                    to: rows[0].Email, // list of receivers 
+                    to: [rows[0].Email, "nipunaw12@gmail.com"], // list of receivers 
                     subject: 'Order Placed: ' + uoid, // Subject line 
                     text: 'Order ' + uoid + " has been placed. Cost: " + data["Price"], // plaintext body
                     attachments: [
