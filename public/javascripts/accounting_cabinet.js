@@ -61,14 +61,6 @@ let cardboard = function(w, h, d) {
     return (w * h * 2 + d * h *2) / 144 * ft3;
 }
 
-let glidesCost = function() { return glides; }
-let hingesCost = function() { return hinges * 2; }
-let platesCost = function() { return plates * 2; }
-let bumpersCost = function() { return bumpers * 8; }
-let pinsCost = function() { return pins * 4; }
-let dowelCost = function() { return dowel * 34; }
-let screwsCost = function() { return screws * 26; }
-
 function getValue(name) {
     return document.getElementById(name).value;
 }
@@ -89,18 +81,22 @@ function calculatePrice() {
 
     let cost = -1;
     
-    cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + doors(w, h) + drawerFront(w) + cardboard(w, h, d) + glides + hinges + plates + bumpers + pins + dowel + screws;
+let pinsCost = function() { return pins * 4; }
+let dowelCost = function() { return dowel * 34; }
+let screwsCost = function() { return screws * 26; }
+
+    cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + doors(w, h) + drawerFront(w) + cardboard(w, h, d) + glides + hinges + plates + bumpers + pinsCost + dowelCost + screwsCost;
     
     if (w >= 9 && w <= 23.9375) {
-        cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + doors(w, h) + drawerFront(w) + cardboard(w, h, d) + glides + hinges + plates + (bumpers * 6) + pins + dowel + screws;
+        cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + doors(w, h) + drawerFront(w) + cardboard(w, h, d) + glides + hinges + plates + (bumpers * 6) + pinsCost + dowelCost + screwsCost;
     }
 
     if (w >= 24 && w <= 35.9375) {
-        cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + (doors(w, h) * 2) + drawerFront(w) + cardboard(w, h, d) + glides + ((hinges + plates)*2) + (bumpers*8) + pins + dowel + screws;
+        cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + drawerBoxes(w, d) + (doors(w, h) * 2) + drawerFront(w) + cardboard(w, h, d) + glides + ((hinges + plates)*2) + (bumpers*8) + pinsCost + dowelCost + screwsCost;
     }
 
     if (w >= 36 && w <= 42) {
-        cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + (drawerBoxes(w, d) * 2) + (doors(w, h) * 2) + (drawerFront(w) * 2) + cardboard(w, h, d) + (glides * 2) + (2 * (hinges + plates)) + (bumpers * 12) + pins + dowel + screws;
+        cost = left(d, h) + right(d, h) + bottom(w, d) + (spanner(w) * 2) + (nailer(w) * 3) + shelf(w, d) + back(w, h) + edgeboard(w, h) + (drawerBoxes(w, d) * 2) + (doors(w, h) * 2) + (drawerFront(w) * 2) + cardboard(w, h, d) + (glides * 2) + (2 * (hinges + plates)) + (bumpers * 12) + pinsCost + dowelCost + screwsCost;
     }
     
     return parseFloat(cost).toFixed(2);
