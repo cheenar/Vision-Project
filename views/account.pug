@@ -46,17 +46,17 @@ html(lang='en')
         .login-block
           form(action='/account/modify', method='POST')
             label First Name:
-            input#username(type='text', name='firstName',  placeholder= firstName, required)
+            input#username(type='text', name='firstName',  placeholder= firstName)
             |  
             label Last Name:
-            input#username(type='text', name='lastName',  placeholder= lastName, required)
+            input#username(type='text', name='lastName',  placeholder= lastName)
             |  
             label Phone Number:
-            input#username(type='tel', name='phone_number',placeholder= phoneNumber, required)
+            input#username(type='tel', name='phone_number',placeholder= phoneNumber)
             |  
             label Shipping Address 1
             |  
-            input#username(type='text', required='', name="sa.shipping1", placeholder= saAddress)
+            input#username(type='text', name="sa.shipping1", placeholder= saAddress)
             |  
             label Shipping Address 2:
             |  
@@ -64,11 +64,11 @@ html(lang='en')
             |  
             label City:
             |  
-            input#username(type='text', required='', name="sa.city", placeholder= saCity)
+            input#username(type='text', name="sa.city", placeholder= saCity)
             |  
             label State:
             |  
-            select(required='', name="sa.state", selected= saState)
+            select(name="sa.state", selected= saState)
               option(value=saState, selected) #{saState} 
               option(value='AL') Alabama
               option(value='AK') Alaska
@@ -124,10 +124,10 @@ html(lang='en')
             |  
             label Zip Code:
             |  
-            input#username(type='number', required='', name="sa.zip", placeholder= saZip)
+            input#username(type='number', name="sa.zip", placeholder= saZip)
             |  
             label E-Mail
-            input#username(type='email', name='email_address',  placeholder=emailAddress, required)
+            input#username(type='email', name='email_address',  placeholder=emailAddress)
             |  
             input.button(type='submit', value='SUBMIT CHANGES')
         h1 ORDER HISTORY
