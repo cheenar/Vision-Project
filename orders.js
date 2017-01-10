@@ -6,7 +6,7 @@ var db = null;
 function initializeDatabase() {
     var db = new loki("orders.json", {
         autosave: true,
-        autosaveInterval: 5000
+        autosaveInterval: 15000
     });
 
     this.db = db;
